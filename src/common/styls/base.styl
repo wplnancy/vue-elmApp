@@ -1,0 +1,29 @@
+//定义全局的样式  1px 的实现主要是运用了伪类和缩放
+body,html
+  line-height: 1
+  font-weight: 200
+  font-family: 'PingFang SC', 'STHeiSC-Light', 'Helvetical-Light', 'arial'
+
+
+@media (-webkit-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5 )
+  .border-1px
+  &::after
+    -webkit-transform: scaleY(0.7)
+    transform: scaleY(0.7)
+
+  @media (-webkit-device-pixel-ratio: 3),(min-device-pixel-ratio: 3 )
+    .border-1px
+    &::after
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
+
+.clearfix
+  display : inline-block
+  &::after
+    content: ''
+    height: 0
+    visibility : hidden
+    display :block
+    line-height: 0
+    clear:both
+
